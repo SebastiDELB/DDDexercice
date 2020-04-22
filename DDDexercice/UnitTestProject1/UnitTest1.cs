@@ -18,7 +18,21 @@ namespace UnitTestProject1
         public void ExceptionSurLeJourDeLaSemaineDeclarationCreneau()
         {
             DateTime date = new DateTime(year: 2020, month: 4, day: 18);
-            Assert.ThrowsException<Exception>(delegate { Creneau unCreneau = new Creneau(DateTime.Now, 120); });
+            Assert.ThrowsException<Exception>(delegate { Creneau unCreneau = new Creneau(date, 120); });
+
+        }
+        [TestMethod]
+        public void EntretienAccepte()
+        {
+            DateTime date = new DateTime(year: 2020, month: 4, day: 22);
+            Creneau unCreneau = new Creneau(DateTime.Now, 120);
+            Entretien entretien = new Entretien(unCreneau, "michel", "bertrand");
+            Assert.AreEqual(annule, entretien.se)
+        }
+        [TestMethod]
+        public void NullReferenceExceptioneDeclarationCreneau()
+        {
+            Assert.ThrowsException<NullReferenceException>(delegate { Creneau unCreneau = new Creneau(DateTime.Now, 0); });
 
         }
     }

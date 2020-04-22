@@ -4,29 +4,36 @@ using System.Text;
 
 namespace DDDexercice
 {
-    class Entretien
+    public class Entretien
     {
         private Guid entretienid;
-        private string status;
+        private lesStatus status;
         private Creneau creneau;
         private string recruteur;
         private string candidat;
 
-        Entretien(Creneau unCreneau, string unRecruteur, string unCandidat)
+        private enum lesStatus
+        {
+            enAttente,
+            annule,
+            accepte
+        };
+        public Entretien(Creneau unCreneau, string unRecruteur, string unCandidat)
         {
             entretienid = new Guid();
-            status = "en attente";
+            creneau = unCreneau;
+            status = (lesStatus)0;
             creneau = unCreneau;
             recruteur = unRecruteur;
             candidat = unCandidat;
         }
         public void Confirmer()
         {
-            status = "accepté";
+            status = (lesStatus)2;
         }
         public void Annuler(string raison)
         {
-            status = "annulé " + raison; 
+            status = (lesStatus)1;
         }
     }
 }
