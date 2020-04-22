@@ -7,11 +7,15 @@ namespace DDDexercice
     public class Entretien
     {
         private Guid entretienid;
-        private lesStatus status;
+        private lesStatus statut;
         private Creneau creneau;
         private string recruteur;
         private string candidat;
 
+        public lesStatus GetStatut()
+        {
+            return statut;
+        }
         private enum lesStatus
         {
             enAttente,
@@ -22,18 +26,18 @@ namespace DDDexercice
         {
             entretienid = new Guid();
             creneau = unCreneau;
-            status = (lesStatus)0;
+            statut = lesStatus.enAttente;
             creneau = unCreneau;
             recruteur = unRecruteur;
             candidat = unCandidat;
         }
         public void Confirmer()
         {
-            status = (lesStatus)2;
+            statut = lesStatus.accepte;
         }
         public void Annuler(string raison)
         {
-            status = (lesStatus)1;
+            statut = lesStatus.annule;
         }
     }
 }

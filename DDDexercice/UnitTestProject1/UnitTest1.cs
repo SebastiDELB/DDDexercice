@@ -27,7 +27,9 @@ namespace UnitTestProject1
             DateTime date = new DateTime(year: 2020, month: 4, day: 22);
             Creneau unCreneau = new Creneau(DateTime.Now, 120);
             Entretien entretien = new Entretien(unCreneau, "michel", "bertrand");
-            Assert.AreEqual(annule, entretien.se)
+            entretien.Confirmer();
+            Assert.AreEqual();
+            
         }
         [TestMethod]
         public void NullReferenceExceptioneDeclarationCreneau()
