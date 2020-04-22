@@ -1,4 +1,6 @@
+using DDDexercice;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace UnitTestProject1
 {
@@ -8,7 +10,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
-
+            Creneau unCreneau = new Creneau(DateTime.Now(), 120);
         }
     }
 }

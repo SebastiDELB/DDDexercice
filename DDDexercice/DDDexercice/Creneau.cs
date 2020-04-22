@@ -10,8 +10,16 @@ namespace DDDexercice
         private int heureDebut { get; set; }
         private int heureFin { get; set; }
 
-        Creneau(DateTime dateCreneau, int duree)
+        public Creneau(DateTime dateCreneau, int duree)
         {
+            if(dateCreneau == null)
+            {
+                throw new NotImplementedException("il faudrait préciser la date");
+            }
+            if (duree != 0)
+            {
+                throw new Exception("il faudrait préciser la durée");
+            }
             this.date = dateCreneau;
             this.heureDebut = dateCreneau.Hour;
             this.heureFin = heureDebut + duree;
