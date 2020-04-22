@@ -10,15 +10,19 @@ namespace DDDexercice
         private int heureDebut { get; set; }
         private int heureFin { get; set; }
 
+
         public Creneau(DateTime dateCreneau, int duree)
         {
-            if(dateCreneau == null)
-            {
-                throw new NotImplementedException("il faudrait préciser la date");
-            }
+            DayOfWeek Samedi = DayOfWeek.Saturday;
+            DayOfWeek dimanche = DayOfWeek.Sunday;
+            
             if (duree != 0)
             {
-                throw new Exception("il faudrait préciser la durée");
+                throw new ArgumentNullException("il faudrait préciser la durée");
+            }
+            if (dateCreneau.DayOfWeek == Samedi && dateCreneau.DayOfWeek == dimanche)
+            {
+                throw new Exception("C'est le week end, go nextflix");
             }
             this.date = dateCreneau;
             this.heureDebut = dateCreneau.Hour;
