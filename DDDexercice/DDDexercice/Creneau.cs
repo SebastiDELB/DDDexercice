@@ -4,26 +4,26 @@ using System.Text;
 
 namespace DDDexercice
 {
-    public class Creneau : ValueObject
+    public class Creneau
     {
-        public DateTime date { get; private set; }
-        public int heureDebut { get; private set; }
-        public int heureFin { get; private set; }
+        private DateTime date { get; set; }
+        private int heureDebut { get; set; }
+        private int heureFin { get; set; }
 
-        private Creneau() { }
-
-        public Creneau(DateTime dateCreneau, int duree)
+        Creneau(DateTime dateCreneau, int duree)
         {
-            date = dateCreneau;
-            heureDebut = dateCreneau.Hour;
-            heureFin = heureDebut + duree;
+            this.date = dateCreneau;
+            this.heureDebut = dateCreneau.Hour;
+            this.heureFin = heureDebut + duree;
         }
 
-        protected override IEnumerable<object> GetAtomicValues()
+        public bool Equals(DateTime Date)
         {
-            yield return date;
-            yield return heureDebut;
-            yield return heureFin;
+            if (this.date == Date)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
