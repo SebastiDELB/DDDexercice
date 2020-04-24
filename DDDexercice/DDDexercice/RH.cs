@@ -38,5 +38,9 @@ namespace DDDexercice
                 unEntretien.AjoutRecruteur(unRecruteur);
             }
         }
+        public void ChangerEntretienDUneSalle(Salle unesalle, Entretien unEntretien)
+        {
+            unesalle.ChangementDEntretienDansLaSalle(unEntretien);
+        }
     }
 }

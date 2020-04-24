@@ -48,5 +48,9 @@ namespace DDDexercice
         {
             recruteurs.Add(unRecruteur);
         }
+        public void RetireRecruteur(Recruteur unRecruteur)
+        {
+            recruteurs.Remove(unRecruteur);
+        }
     }
 }

@@ -21,5 +21,9 @@ namespace DDDexercice
         {
             unEntretien.recruteurs.Add(this);
         }
+        public void SeRetireDeLEntretien(Entretien unEntretien)
+        {
+            unEntretien.RetireRecruteur(this);
+        }
     }
 }

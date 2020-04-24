@@ -18,5 +18,10 @@ namespace DDDexercice
             this.entretien = unEntretien;
             this.nom = unNom;
         }
+        public void ChangementDEntretienDansLaSalle(Entretien unEntretien)
+        {
+            this.entretien = unEntretien;
+        }
+            
     }
 }
