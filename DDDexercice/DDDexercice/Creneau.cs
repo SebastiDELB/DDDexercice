@@ -6,10 +6,10 @@ namespace DDDexercice
 {
     public class Creneau
     {
-        private Guid creneauID;
-        private DateTime date { get; set; }
-        private int heureDebut { get; set; }
-        private int heureFin { get; set; }
+        public Guid creneauID { get; private set; }
+        public DateTime date { get; private set; }
+        public int heureDebut { get; private set; }
+        public int heureFin { get; private set; }
 
 
         public Creneau(DateTime dateCreneau, int duree)
@@ -40,7 +40,7 @@ namespace DDDexercice
             this.date = dateCreneau;
             this.heureDebut = dateCreneau.Hour;
             this.heureFin = heureDebut + duree;
-            this.creneauID = new Guid();
+            this.creneauID = Guid.NewGuid();
         }
 
         public bool Equals(DateTime Date)

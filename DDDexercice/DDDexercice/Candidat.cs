@@ -6,17 +6,17 @@ namespace DDDexercice
 {
     public class Candidat
     {
-        private Guid candidatID;
-        private string nom;
-        private string prenom;
-        private int age;
-        private string mail;
-        private Profil profil;
-        private string CV; // il faut mettre un file ici mais dans le cadre de l'exercice, pour les tests, on va juste mettre un string pour simplifier
+        public Guid candidatID { get; private set; }
+        public string nom { get; private set; }
+        public string prenom { get; private set; }
+        public int age { get; private set; }
+        public string mail { get; private set; }
+        public Profil profil { get; private set; }
+        public string CV { get; private set; } // il faut mettre un file ici mais dans le cadre de l'exercice, pour les tests, on va juste mettre un string pour simplifier
 
         public Candidat(string unNom, string unPrenom, int unAge, string unMail, Profil unProfil, string unCV)
         {
-            this.candidatID = new Guid();
+            this.candidatID = Guid.NewGuid();
             this.nom = unNom;
             this.prenom = unPrenom;
             this.age = unAge;

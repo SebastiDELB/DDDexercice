@@ -6,14 +6,14 @@ namespace DDDexercice
 {
     public class RH
     {
-        private Guid RHID;
-        private string nom;
-        private string prenom;
-        private string mail;
+        public Guid RHID { get; private set; }
+        public string nom { get; private set; }
+        public string prenom { get; private set; }
+        public string mail{ get; private set; }
 
         public RH(string unNom, string unPrenom, string unMail)
         {
-            this.RHID = new Guid();
+            this.RHID = Guid.NewGuid();
             this.nom = unNom;
             this.prenom = unPrenom;
             this.mail = unMail;

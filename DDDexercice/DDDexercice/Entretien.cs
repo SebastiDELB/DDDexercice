@@ -1,43 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DDDexercice
 {
     public class Entretien
     {
-        private Guid entretienid;
-        private lesStatus statut;
-        private Creneau creneau;
-        private List<Recruteur> recruteurs;
-        private Candidat candidat;
+        public Guid entretienid { get; private set; }
+        public lesStatus statuts { get; private set; }
+        public Creneau creneau { get; private set; }
+        public List<Recruteur> recruteurs { get; private set; }
+        public Candidat candidat { get; private set; }
 
-        private enum lesStatus
+        public enum lesStatus
         {
+            [Description("enAttente")]
             enAttente,
+            [Description("annule")]
             annule,
-            accepte
+            [Description("accepte")]
+            accepte,
         };
         public Entretien(Creneau unCreneau, List<Recruteur> desRecruteurs, Candidat unCandidat)
         {
-            this.entretienid = new Guid();
+            this.entretienid = Guid.NewGuid();
             this.creneau = unCreneau;
-            this.statut = lesStatus.enAttente;
+            this.statuts = lesStatus.enAttente;
             this.creneau = unCreneau;
-            desRecruteurs.ForEach(delegate(Recruteur recruteur)
+            List<Recruteur> tempRecruteurs = new List<Recruteur>();
+            foreach (Recruteur recruteur in desRecruteurs)
             {
-                this.recruteurs.Add(recruteur);
-            });
+                tempRecruteurs.Add(recruteur);
+            }
+            this.recruteurs = tempRecruteurs;
             this.candidat = unCandidat;
         }
         public void Confirmer()
         {
-            this.statut = lesStatus.accepte;
+            this.statuts = lesStatus.accepte;
         }
         //d'après les consignes, on ne sauvegarde pas la raison de annulé, ce qui est inutile donc de la réclamer en paramètre
         public void Annuler(string raison)
         {
-            this.statut = lesStatus.annule;
+            this.statuts = lesStatus.annule;
         }
     }
 }

@@ -6,15 +6,17 @@ namespace DDDexercice
 {
     public class CompteRendu
     {
-        private Guid compterenduID;
-        private string avis;
-        private Candidat candidat;
+        public Guid compterenduID { get; private set; }
+        public string avis { get; private set; }
+        public Candidat candidat { get; private set; }
+        public Recruteur recruteur { get; private set; }
 
-        public CompteRendu(Candidat unCandidat, string unAvis)
+        public CompteRendu(Candidat unCandidat, string unAvis, Recruteur unRecruteur)
         {
-            this.compterenduID = new Guid();
+            this.compterenduID = Guid.NewGuid();
             this.avis = unAvis;
             this.candidat = unCandidat;
+            this.recruteur = unRecruteur;
         }
         public CompteRendu AffichageCompteRendu()
         {

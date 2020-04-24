@@ -6,14 +6,14 @@ namespace DDDexercice
 {
     public class Salle
     {
-        private Guid salleID;
-        private int numero;
-        private Entretien entretien;
-        private string nom;
+        public Guid salleID { get; private set; }
+        public int numero { get; private set; }
+        public Entretien entretien { get; private set; }
+        public string nom { get; private set; }
 
         public Salle(int unNumero, Entretien unEntretien, string unNom)
         {
-            this.salleID = new Guid();
+            this.salleID = Guid.NewGuid();
             this.numero = unNumero;
             this.entretien = unEntretien;
             this.nom = unNom;

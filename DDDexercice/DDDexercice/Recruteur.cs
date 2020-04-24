@@ -6,14 +6,14 @@ namespace DDDexercice
 {
     public class Recruteur
     {
-        private Guid recruteurID;
-        private string nom;
-        private string prenom;
-        private string mail;
-        List<CompteRendu> compterendus;
+        public Guid recruteurID { get; private set; }
+        public string nom { get; private set; }
+        public string prenom { get; private set; }
+        public string mail { get; private set; }
+        public List<CompteRendu> compterendus { get; private set; }
         public Recruteur(string unNom, string unPrenom, string email)
         {
-            this.recruteurID = new Guid();
+            this.recruteurID = Guid.NewGuid();
             this.nom = unNom;
             this.prenom = unPrenom;
             this.mail = email;
