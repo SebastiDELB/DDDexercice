@@ -29,5 +29,9 @@ namespace DDDexercice
         {
             unEntretien.Confirmer();
         }
+        public void AnnuleEntretien(Entretien unEntretien,string unAvis)
+        {
+            unEntretien.Annuler(unAvis);
+        }
     }
 }

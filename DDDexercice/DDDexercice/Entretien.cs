@@ -22,19 +22,14 @@ namespace DDDexercice
             [Description("accepte")]
             accepte,
         };
-        public Entretien(Creneau unCreneau, List<Recruteur> desRecruteurs, Candidat unCandidat)
+        public Entretien(Creneau unCreneau, Candidat unCandidat)
         {
             this.entretienid = Guid.NewGuid();
             this.creneau = unCreneau;
             this.statuts = lesStatus.enAttente;
             this.creneau = unCreneau;
-            List<Recruteur> tempRecruteurs = new List<Recruteur>();
-            foreach (Recruteur recruteur in desRecruteurs)
-            {
-                tempRecruteurs.Add(recruteur);
-            }
-            this.recruteurs = tempRecruteurs;
             this.candidat = unCandidat;
+            this.recruteurs = new List<Recruteur>();
         }
         public void Confirmer()
         {
@@ -44,6 +39,14 @@ namespace DDDexercice
         public void Annuler(string raison)
         {
             this.statuts = lesStatus.annule;
+        }
+        public List<Recruteur> ListDesRecruteurs()
+        {
+            return this.recruteurs;
+        }
+        public void AjoutRecruteur(Recruteur unRecruteur)
+        {
+            recruteurs.Add(unRecruteur);
         }
     }
 }

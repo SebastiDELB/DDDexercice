@@ -12,12 +12,14 @@ namespace DDDexercice
         public int heureFin { get; private set; }
 
 
-        public Creneau(DateTime dateCreneau, int duree)
+        public Creneau(DateTime dateCreneau, int dureeEnMinute)
         {
             DayOfWeek Samedi = DayOfWeek.Saturday;
             DayOfWeek dimanche = DayOfWeek.Sunday;
-            
-            if (duree <= 0)
+            const int heureMinimaleDeDebut = 8;
+            const int heureMaxDeFin = 22;
+
+            if (dureeEnMinute <= 0)
             {
                 throw new ArgumentNullException("il faudrait préciser la durée");
             }
@@ -25,21 +27,17 @@ namespace DDDexercice
             {
                 throw new Exception("C'est le week end, go nextflix");
             }
-            if (dateCreneau.Hour < 8)
+            if (dateCreneau.Hour < heureMinimaleDeDebut)
             {
                 throw new Exception("il est trop tôt");
             }
-            if ((dateCreneau.Hour + (duree/60))> 22)
+            if ((dateCreneau.Hour + (dureeEnMinute / 60))> heureMaxDeFin)
             {
                 throw new Exception("Faut pas abuser sur l'heure coco");
             }
-            /*if (dateCreneau.DayOfWeek == Samedi || dateCreneau.DayOfWeek == dimanche)
-            {
-                throw new Exception("C'est le week end, go nextflix");
-            }*/
             this.date = dateCreneau;
             this.heureDebut = dateCreneau.Hour;
-            this.heureFin = heureDebut + duree;
+            this.heureFin = heureDebut + dureeEnMinute;
             this.creneauID = Guid.NewGuid();
         }
 

@@ -19,9 +19,24 @@ namespace DDDexercice
             this.mail = unMail;
         }
 
-        public void CreationEntretien(Creneau unCreneau, List<Recruteur> desRecruteurs, Candidat unCandidat)
+        public bool CreationEntretien(Creneau unCreneau, Candidat unCandidat)
         {
-            Entretien unEntretien = new Entretien(unCreneau, desRecruteurs, unCandidat);
+            try
+            {
+                Entretien unEntretien = new Entretien(unCreneau, unCandidat);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public void AssigneUnouDesRecruteurAUnEntretien(Entretien unEntretien, List<Recruteur> desRecruteurs)
+        {
+            foreach(Recruteur unRecruteur in desRecruteurs)
+            {
+                unEntretien.AjoutRecruteur(unRecruteur);
+            }
         }
     }
 }
