@@ -1,0 +1,13 @@
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\obj\Debug\netcoreapp3.1\DDDexercice.csprojAssemblyReference.cache
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\obj\Debug\netcoreapp3.1\DDDexercice.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\obj\Debug\netcoreapp3.1\DDDexercice.AssemblyInfoInputs.cache
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\obj\Debug\netcoreapp3.1\DDDexercice.AssemblyInfo.cs
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\bin\Debug\netcoreapp3.1\DDDexercice.exe
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\bin\Debug\netcoreapp3.1\DDDexercice.deps.json
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\bin\Debug\netcoreapp3.1\DDDexercice.runtimeconfig.json
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\bin\Debug\netcoreapp3.1\DDDexercice.runtimeconfig.dev.json
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\bin\Debug\netcoreapp3.1\DDDexercice.dll
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\bin\Debug\netcoreapp3.1\DDDexercice.pdb
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\obj\Debug\netcoreapp3.1\DDDexercice.dll
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\obj\Debug\netcoreapp3.1\DDDexercice.pdb
+C:\Users\sebas\Documents\GitHub\DDDexercice\DDDexercice\DDDexercice\obj\Debug\netcoreapp3.1\DDDexercice.genruntimeconfig.cache

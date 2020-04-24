@@ -9,35 +9,35 @@ namespace DDDexercice
         private Guid entretienid;
         private lesStatus statut;
         private Creneau creneau;
-        private string recruteur;
-        private string candidat;
+        private List<Recruteur> recruteurs;
+        private Candidat candidat;
 
-        public lesStatus GetStatut()
-        {
-            return statut;
-        }
         private enum lesStatus
         {
             enAttente,
             annule,
             accepte
         };
-        public Entretien(Creneau unCreneau, string unRecruteur, string unCandidat)
+        public Entretien(Creneau unCreneau, List<Recruteur> desRecruteurs, Candidat unCandidat)
         {
-            entretienid = new Guid();
-            creneau = unCreneau;
-            statut = lesStatus.enAttente;
-            creneau = unCreneau;
-            recruteur = unRecruteur;
-            candidat = unCandidat;
+            this.entretienid = new Guid();
+            this.creneau = unCreneau;
+            this.statut = lesStatus.enAttente;
+            this.creneau = unCreneau;
+            desRecruteurs.ForEach(delegate(Recruteur recruteur)
+            {
+                this.recruteurs.Add(recruteur);
+            });
+            this.candidat = unCandidat;
         }
         public void Confirmer()
         {
-            statut = lesStatus.accepte;
+            this.statut = lesStatus.accepte;
         }
+        //d'après les consignes, on ne sauvegarde pas la raison de annulé, ce qui est inutile donc de la réclamer en paramètre
         public void Annuler(string raison)
         {
-            statut = lesStatus.annule;
+            this.statut = lesStatus.annule;
         }
     }
 }
